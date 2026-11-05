@@ -40,7 +40,10 @@ a{color:#a99bff}
 .caixa p{margin:0 0 10px;color:var(--suave)}.caixa p:last-child{margin:0}
 details{background:var(--cartao);border:1px solid var(--linha);border-radius:12px;padding:14px 18px;margin-bottom:10px}
 summary{cursor:pointer;font-weight:600}
-details p{color:var(--suave);margin:10px 0 0}
+details p,details ol{color:var(--suave);margin:10px 0 0}
+details li{margin:4px 0}
+pre{background:#0b0b0f;border:1px solid var(--linha);border-radius:8px;padding:10px 12px;overflow-x:auto;margin:10px 0 0}
+pre code{color:var(--texto);font-size:14px}
 footer{border-top:1px solid var(--linha);margin-top:60px;padding:26px 20px;text-align:center;color:var(--suave);font-size:14px}
 footer a{color:var(--suave)}
 @media (max-width:600px){.hero h1{font-size:32px}.hero{padding-top:30px}.bt{width:100%}.topo nav{display:none}}
@@ -97,14 +100,21 @@ footer a{color:var(--suave)}
 
 <section class="secao">
   <h2>Primeira vez abrindo</h2>
-  <details><summary>No Mac aparece "não é possível abrir"</summary>
-    <p>Abra a pasta Aplicativos, clique com o botão direito no Gregio AutoEdit e escolha Abrir. Depois clique em Abrir de novo. Só precisa fazer isso uma vez. Se não aparecer a opção, vá em Ajustes do Sistema › Privacidade e Segurança e clique em "Abrir Mesmo Assim".</p></details>
+  <details><summary>No Mac aparece "A Apple não pode verificar se o item está livre de malware"</summary>
+    <p>Esse aviso aparece porque o app ainda não tem a assinatura paga da Apple. Para liberar, é só uma vez:</p>
+    <ol>
+      <li>Arraste o Gregio AutoEdit para a pasta Aplicativos e tente abrir. Quando o aviso aparecer, clique em OK (ou Concluído).</li>
+      <li>Abra o menu Apple › Ajustes do Sistema › Privacidade e Segurança.</li>
+      <li>Role a tela até o fim. Vai aparecer "Gregio AutoEdit foi bloqueado". Clique em <b>Abrir Mesmo Assim</b> e confirme com a sua senha.</li>
+    </ol>
+    <p>Se o botão não aparecer, abra o app mais uma vez e volte nessa tela. Se mesmo assim não der, abra o Terminal (procure "Terminal" no Spotlight), cole a linha abaixo, aperte Enter e abra o app de novo:</p>
+    <pre><code>xattr -cr "/Applications/Gregio AutoEdit.app"</code></pre></details>
   <details><summary>No Windows aparece "O Windows protegeu o computador"</summary>
     <p>Clique em "Mais informações" e depois em "Executar assim mesmo". Isso aparece em programas novos que ainda não têm muitos downloads.</p></details>
   <details><summary>Preciso pagar alguma coisa?</summary>
     <p>Não. O app é gratuito. As músicas de fundo você adiciona na aba Ajustes: use só músicas que você tem direito de usar.</p></details>
   <details><summary>Qual computador eu preciso?</summary>
-    <p>Mac com macOS 10.15 ou mais novo, ou Windows 10/11 de 64 bits, com pelo menos 8 GB de memória e uns 2 GB livres. Quanto mais novo o computador, mais rápida a edição.</p></details>
+    <p>Mac com macOS 11 (Big Sur) ou mais novo, ou Windows 10/11 de 64 bits, com pelo menos 8 GB de memória e uns 2 GB livres. Quanto mais novo o computador, mais rápida a edição.</p></details>
 </section>
 
 <footer>
